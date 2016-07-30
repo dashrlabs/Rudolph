@@ -13,7 +13,7 @@ export default class GMailWidget extends React.Component {
 
   static id = 'GMail';
   static widgetName = 'GMail Widget';
-  static sizes = [[2, 3]];
+  static sizes = [[2, 3], [2, 1], [2, 2], [2, 4]];
 
   constructor(props, ...args) {
     super(props, ...args);

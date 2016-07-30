@@ -1,7 +1,12 @@
 {
   "manifest_version": 2,
   "name": "Dashr",
-  "version": "1.0.0",
+  "version": "1.0.3",
+
+  "icons": {
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
 
   "description": "Da thing",
 
@@ -17,7 +22,7 @@
     "topSites"
   ],
   "oauth2": {
-    "client_id": "759010497586-c72oh46qise43k62sro7dfvuj2qvvb5a.apps.googleusercontent.com",
+    "client_id": "759010497586-rukuqvm6mr036f9326mghptkmqu3rjth.apps.googleusercontent.com",
     "scopes": [
       "https://www.googleapis.com/auth/gmail.readonly"
     ]

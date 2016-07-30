@@ -79,11 +79,24 @@ gulp.task('watch', ['build'], () => {
   gulp.watch(files.less, ['less']);
 });
 
-gulp.task('crx', ['build'], () => {
-  gulp.src('.')
-    .pipe(crx({
-      zip: true,
-      crx: false,
-    }))
-    .pipe(gulp.dest('./crx'));
-});
+gulp.task('crx-dist', ['build'], () =>
+  gulp.src('./dist/**/*')
+    .pipe(gulp.dest('./crx-dist/dist'))
+);
+
+gulp.task('crx-icons', ['build'], () =>
+  gulp.src('./icons/**/*')
+    .pipe(gulp.dest('./crx-dist/icons'))
+);
+
+gulp.task('crx-manifest', ['build'], () =>
+  gulp.src('./manifest.json')
+    .pipe(gulp.dest('./crx-dist'))
+);
+
+gulp.task('crx-fonts', ['build'], () =>
+  gulp.src('./fonts/**/*')
+    .pipe(gulp.dest('./crx-dist/fonts'))
+);
+
+gulp.task('dist', ['crx-dist', 'crx-icons', 'crx-manifest', 'crx-fonts']);

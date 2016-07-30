@@ -67,7 +67,7 @@ export default class TopSitesWidget extends React.Component {
             (
             <div key={site.title} style={{ width: '25%', height: '50%', display: 'inline-block', textAlign: 'center', float: 'left' }}>
               <div style={{ backgroundColor: this._col(), height: '60%', width: '60%', margin: '0 auto', borderRadius: 5 }}>
-                <span style={{ fontSize: '600%', marginTop: 30, display: 'inline-block', color: 'rgb(63, 199, 250)' }}>{site.title.replace(/\([0-9]+\) /g, '')[0].toUpperCase()}</span>
+                <span style={{ fontSize: '600%', marginTop: 30, display: 'inline-block', color: 'rgb(63, 199, 250)' }}>{site.title.replace(/\([0-9]+\) /g, '').replace(/^https?:\/\//g, '')[0].toUpperCase()}</span>
               </div>
               <h4 style={{ margin: 0, textOverflow: 'ellipsis', overflow: 'hidden', padding: '0 6px', height: 44 }}>{site.title}</h4>
             </div>

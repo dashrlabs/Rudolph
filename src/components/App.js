@@ -34,7 +34,7 @@ export default class CoreApp extends React.Component {
         <div className="uk-flex-item-1" style={{ position: 'relative', zIndex: 2, overflow: 'auto' }}>
           <Grid ref="grid" settings={this.props.settings} />
         </div>
-        <AppSettingsBar addWidget={this.triggerAdd} editWidgets={this.editWidgets} />
+        <AppSettingsBar addWidget={this.triggerAdd} editWidgets={this.editWidgets} settings={this.props.settings} />
       </div>
     );
   }

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp build",
+    "dist": "gulp dist",
     "test": "eslint src/",
     "watch": "gulp watch"
   },
@@ -40,7 +41,7 @@
   "dependencies": {
     "dashr-widget-auspost": "^1.0.0",
     "dashr-widget-clock": "*",
-    "dashr-widget-compliments": "0.0.1",
+    "dashr-widget-compliments": "0.0.3",
     "dashr-widget-dinogame": "*",
     "dashr-widget-imageview": "*",
     "dashr-widget-quote-of-the-day": "*",
