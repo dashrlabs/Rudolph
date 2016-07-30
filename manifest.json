@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Hack Container",
+  "version": "1.0.0",
+
+  "description": "Hack container for Hack widgets",
+
+  "author": "Team Hack",
+  "chrome_url_overrides": {
+    "newtab": "dist/index.html"
+  },
+  "permissions": [
+    "geolocation"
+  ]
+}

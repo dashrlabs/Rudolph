@@ -1,0 +1,43 @@
+html {
+  overflow: hidden;
+}
+
+.up-ten {
+  margin-top: -10px !important;
+}
+
+input {
+  border-radius: 0 !important;
+}
+
+.app-container {
+  height: 100vh;
+
+  .app-settings-bar {
+    height: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: background 0.2s linear;
+
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+
+    .app-settings-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 20px;
+      border-right: 1px solid #777;
+      cursor: pointer;
+      color: #444;
+
+      &:hover {
+        color: #000;
+      }
+
+      &:first-child {
+        border-left: 1px solid #777;
+      }
+    }
+  }
+}

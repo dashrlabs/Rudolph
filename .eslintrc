@@ -1,0 +1,10 @@
+{
+  "extends": "eslint-config-airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    "max-len": 0,
+    "no-underscore-dangle": 0,
+    "react/jsx-no-bind": 0,
+    "react/prefer-stateless-function": 0
+  }
+}

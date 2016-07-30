@@ -1,0 +1,78 @@
+@gridSize: 140px;
+
+.app-grid {
+  position: relative;
+  width: 100vw;
+  height: ~"calc(100% - 40px)";
+
+  .app-grid-square {
+    width: @gridSize;
+    height: @gridSize;
+    // background: rgba(40, 40, 40, 0.6);
+    background: white;
+    display: inline-block;
+    border: 1px solid #000;
+
+    &.Xtwo {
+      width: @gridSize * 2 + 20;
+    }
+
+    &.Xthree {
+      width: @gridSize * 3 + 40;
+    }
+
+    &.Xfour {
+      width: @gridSize * 4 + 60;
+    }
+
+    &.Ytwo {
+      height: @gridSize * 2 + 20;
+    }
+
+    &.Ythree {
+      height: @gridSize * 3 + 20;
+    }
+
+    &.Yfour {
+      height: @gridSize * 4 + 20;
+    }
+
+    &.dark {
+      // animation: square-in 0.6s;
+      // animation-timing-function: ease-in-out;
+      opacity: 0;
+      background: rgba(0, 0, 0, 0.4);
+      transition: background 0.4s, opacity 0.4s;
+
+      &.visible {
+        cursor: pointer;
+        opacity: 1;
+      }
+
+      .content {
+        color: white;
+        opacity: 0;
+        transition: opacity 0.4s;
+        text-align: center;
+
+        i {
+          font-size: 800%;
+          margin-top: 8px;
+        }
+
+        h4 {
+          margin-top: 8px;
+          color: white;
+        }
+      }
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.7);
+
+        .content {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

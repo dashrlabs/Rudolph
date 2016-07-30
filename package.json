@@ -1,0 +1,49 @@
+{
+  "name": "hack-wdiget",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "test": "eslint src/",
+    "watch": "gulp watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-plugin-transform-class-properties": "^6.11.5",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "eslint": "^3.2.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^5.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.1.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  },
+  "dependencies": {
+    "dashr-widget-quote-of-the-day": "^1.0.2",
+    "dashr-widget-todo": "^2.0.0",
+    "dashr-widget-weather": "^1.0.0",
+    "jquery": "^2.1.0",
+    "lodash": "^4.14.1",
+    "react": "^0.14.0",
+    "react-dnd": "^2.1.4",
+    "react-dom": "^0.14.0",
+    "uikit": "^2.26.4"
+  }
+}
