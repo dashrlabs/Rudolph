@@ -53,7 +53,7 @@ export default class CoreApp extends React.Component {
         <div style={{ display: this.state.inDom ? 'block' : 'none', position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', opacity: this.state.loaded ? 0 : 1, transition: 'opacity 0.7s ease-in-out', background: '#CCC', zIndex: 10, textAlign: 'center' }}>
           <img src={LOGO} alt="logo" style={{ transform: 'scale(0.5)' }} />
         </div>
-        <div style={Object.assign({ position: 'fixed', top: 0, left: 0, width: '100vw', height: 'calc(100vh - 40px)', zIndex: 0 }, appBackground)} ></div>
+        <div style={Object.assign({ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 0 }, appBackground)} ></div>
         <div style={Object.assign({ position: 'fixed', top: 0, left: 0, width: '100vw', height: 'calc(100vh - 40px)' }, { backgroundColor: 'rgba(255, 255, 255, 0.4)', zIndex: 1 })} ></div>
 
         <div className="uk-flex-item-1" style={{ position: 'relative', zIndex: 2, overflow: 'auto' }}>
