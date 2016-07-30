@@ -52,6 +52,7 @@ export default class RAMUsageWidget extends React.Component {
         <div className="uk-margin-left uk-margin-right">
           <Line percent={100 * used / c} strokeWidth={12} />
         </div>
+        <h4 style={{ marginTop: 12 }} className="uk-margin-left uk-text-primary">Memory Usage</h4>
       </div>
     );
   }

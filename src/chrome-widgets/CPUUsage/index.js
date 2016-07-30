@@ -73,6 +73,7 @@ export default class CPUUsageWidget extends React.Component {
           )
           : null
         }
+        <h4 style={{ paddingTop: 8 }} className="uk-margin-left uk-text-primary">CPU Usage</h4>
       </div>
     );
   }
