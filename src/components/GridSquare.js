@@ -18,11 +18,20 @@ export default class GridSquare extends React.Component {
   };
 
   onDrag = (event) => {
-    event.preventDefault();
+    let item = event.dataTransfer.getData('text');
+    if (!item) event.preventDefault();
+
+    try {
+      item = JSON.parse(item);
+    } catch (e) {
+      return;
+    }
+    if (item && this.props.claim(item, this.props.x, this.props.y, true)) {
+      event.preventDefault();
+    }
   }
 
   onDrop = (event) => {
-    // event.preventDefault();
     let item = event.dataTransfer.getData('text');
 
     try {
@@ -31,6 +40,7 @@ export default class GridSquare extends React.Component {
       return;
     }
     if (item && this.props.dark && this.props.claim) {
+      event.preventDefault();
       this.props.claim(item, this.props.x, this.props.y);
     }
   }

@@ -44,13 +44,19 @@ export default class Grid extends React.Component {
     });
   }
 
-  claim = (item, col, row) => {
+  claim = (item, col, row, dry) => {
     const mItems = this.props.settings.get('gridItems', []).filter((mItem) => mItem.uniqueID !== item.uniqueID);
-    const bad = _.range(item.width).some((w) =>
+    let bad = _.range(item.width).some((w) =>
       _.range(item.height).some((h) =>
         this._pointIn(col + w, row + h, mItems)
       )
     );
+    let good = false;
+    widgetClasses[item.widgetID]().sizes.forEach((d) => {
+      if (item.width === d[0] && item.height === d[1]) good = true;
+    });
+    if (!good) bad = true;
+    if (dry) return !bad;
     if (bad) return;
     const items = this.props.settings.get('gridItems', []).map((mItem) => {
       if (mItem.uniqueID !== item.uniqueID) return mItem;
@@ -104,11 +110,25 @@ export default class Grid extends React.Component {
     );
   }
 
+  _delete(item) {
+    if (!confirm('Are you sure you want to delete this widget?')) return;
+    this.props.settings.set('gridItems', this.props.settings.get('gridItems', []).filter((mItem) => mItem.uniqueID !== item.uniqueID));
+  }
+
   _pointIn(col, row, items) {
     return items.some((item) =>
       item.x <= col && item.x + item.width > col
         && item.y <= row && item.y + item.height > row
     );
+  }
+
+  _update = (item, newItem) => {
+    if (this.claim(newItem, newItem.x, newItem.y, true)) {
+      this.props.settings.set('gridItems', this.props.settings.get('gridItems', []).map((mItem) => {
+        if (mItem.uniqueID !== newItem.uniqueID) return mItem;
+        return newItem;
+      }));
+    }
   }
 
   render() {
@@ -141,7 +161,7 @@ export default class Grid extends React.Component {
           return (
             <div key={`${item.widgetID}_${item.uniqueID}`}>
               <GridSquare key={key} x={item.x} y={item.y} width={item.width} height={item.height} className={`${item.widgetID} ${item.widgetID}_${item.uniqueID}`} inDom>
-                <WidgetEditWrapper edit={this.state.edit} item={item}>
+                <WidgetEditWrapper edit={this.state.edit} item={item} delete={this._delete.bind(this, item)} update={this._update}>
                   <Settings app={Widget} props={props} namespace={`${item.widgetID}_${item.uniqueID}`} />
                 </WidgetEditWrapper>
               </GridSquare>

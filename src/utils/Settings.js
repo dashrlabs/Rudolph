@@ -54,6 +54,7 @@ export default class Settings extends React.Component {
   render() {
     return (<this.props.app
       settings={this.getSettingsProto()}
+      chrome={window.chrome}
       {...this.props.props}
     />);
   }

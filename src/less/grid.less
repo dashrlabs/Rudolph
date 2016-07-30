@@ -11,7 +11,8 @@
     // background: rgba(40, 40, 40, 0.6);
     background: white;
     display: inline-block;
-    border: 1px solid #000;
+    border-radius: 3px;
+    // border: 1px solid #000;
 
     &.Xtwo {
       width: @gridSize * 2 + 20;
@@ -30,11 +31,11 @@
     }
 
     &.Ythree {
-      height: @gridSize * 3 + 20;
+      height: @gridSize * 3 + 40;
     }
 
     &.Yfour {
-      height: @gridSize * 4 + 20;
+      height: @gridSize * 4 + 60;
     }
 
     &.dark {
@@ -43,6 +44,7 @@
       opacity: 0;
       background: rgba(0, 0, 0, 0.4);
       transition: background 0.4s, opacity 0.4s;
+      box-shadow: 2px 3px 3px 3px #333;
 
       &.visible {
         cursor: pointer;

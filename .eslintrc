@@ -2,6 +2,7 @@
   "extends": "eslint-config-airbnb",
   "parser": "babel-eslint",
   "rules": {
+    "consistent-return": 0,
     "max-len": 0,
     "no-underscore-dangle": 0,
     "react/jsx-no-bind": 0,

@@ -24,6 +24,8 @@
     "gulp-babel": "^6.1.2",
     "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.0",
+    "gulp-crx-pack": "^1.0.1",
+    "gulp-crx-pkg": "^0.1.2",
     "gulp-less": "^3.1.0"
   },
   "babel": {
@@ -36,12 +38,19 @@
     ]
   },
   "dependencies": {
-    "dashr-widget-quote-of-the-day": "^1.0.2",
-    "dashr-widget-todo": "^2.0.0",
-    "dashr-widget-weather": "^1.0.0",
+    "dashr-widget-auspost": "^1.0.0",
+    "dashr-widget-clock": "*",
+    "dashr-widget-compliments": "0.0.1",
+    "dashr-widget-dinogame": "*",
+    "dashr-widget-imageview": "*",
+    "dashr-widget-quote-of-the-day": "*",
+    "dashr-widget-todo": "*",
+    "dashr-widget-weather": "*",
     "jquery": "^2.1.0",
     "lodash": "^4.14.1",
+    "rc-progress": "^1.0.4",
     "react": "^0.14.0",
+    "react-circular-progress": "^0.1.2",
     "react-dnd": "^2.1.4",
     "react-dom": "^0.14.0",
     "uikit": "^2.26.4"

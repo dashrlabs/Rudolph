@@ -8,6 +8,10 @@ export default class AppSettingsBar extends React.Component {
     editWidgets: React.PropTypes.func,
   };
 
+  // <div className="app-settings-icon">
+  //   <i className="uk-icon-cog uk-icon-large"></i>
+  // </div>
+
   render() {
     return (
       <div className="uk-flex uk-flex-right uk-flex-item-none app-settings-bar" style={{ position: 'relative', zIndex: 4 }}>
@@ -32,9 +36,6 @@ export default class AppSettingsBar extends React.Component {
         </div>
         <div className="app-settings-icon" onClick={this.props.editWidgets}>
           <i className="uk-icon-pencil uk-icon-large"></i>
-        </div>
-        <div className="app-settings-icon">
-          <i className="uk-icon-cog uk-icon-large"></i>
         </div>
       </div>
     );

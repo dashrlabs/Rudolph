@@ -3,6 +3,8 @@ import gulp from 'gulp';
 import babel from 'gulp-babel';
 import browserify from 'gulp-browserify';
 import concat from 'gulp-concat';
+import crx from 'gulp-crx-pkg';
+import fs from 'fs';
 import less from 'gulp-less';
 
 const files = {
@@ -75,4 +77,13 @@ gulp.task('watch', ['build'], () => {
   gulp.watch(files.rawJS, ['browserify']);
   gulp.watch(files.html, ['html']);
   gulp.watch(files.less, ['less']);
+});
+
+gulp.task('crx', ['build'], () => {
+  gulp.src('.')
+    .pipe(crx({
+      zip: true,
+      crx: false,
+    }))
+    .pipe(gulp.dest('./crx'));
 });
