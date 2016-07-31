@@ -170,8 +170,8 @@ export default class Grid extends React.Component {
         })
       }
       {
-        _.range(Math.max(maxX, (this.state.pageWidth - 200) / 160) - 1).map((col) =>
-          _.range(Math.max(maxY, (this.state.pageHeight - 200) / 160) - 1).map((row) => {
+        _.range(Math.max(maxX, (this.state.pageWidth - 200) / 160 - 1)).map((col) =>
+          _.range(Math.max(maxY, (this.state.pageHeight - 200) / 160 - 1)).map((row) => {
             const pI = this._pointIn(col, row, items);
             const vis = this.state.showGrid && !pI;
             return (
