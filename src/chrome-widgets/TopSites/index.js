@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Circle } from 'rc-progress';
+import { imageSites } from '../../constants';
 
 export default class TopSitesWidget extends React.Component {
   static propTypes = {
@@ -11,7 +11,7 @@ export default class TopSitesWidget extends React.Component {
   }
 
   static id = 'top-sites';
-  static widgetName = 'Top SItes';
+  static widgetName = 'Top Sites';
   static sizes = [[4, 2]];
 
   constructor(...args) {
@@ -34,28 +34,18 @@ export default class TopSitesWidget extends React.Component {
     });
   }
 
-  _hex(num) {
-    return parseInt(num, 10).toString(16);
-  }
-
-  _col() {
-    return '#444';
-    // const rgb = this._color([255, 255, 255]);
-    // return `rgb(${Math.round(rgb[0])}, ${Math.round(rgb[1])}, ${Math.round(rgb[2])})`;
-  }
-
-  _color(mix) {
-    let red = Math.round(Math.random() * 256);
-    let green = Math.round(Math.random() * 256);
-    let blue = Math.round(Math.random() * 256);
-
-    if (mix) {
-      red = (red + mix[0]) / 2;
-      green = (green + mix[1]) / 2;
-      blue = (blue + mix[2]) / 2;
+  _image(site) {
+    const found = imageSites.find((mSite) => mSite.reg().test(site.url));
+    if (found) {
+      return {
+        backgroundImage: `url('${found.src}')`,
+        backgroundSize: 'contain',
+        backgroundRepeat: 'no-repeat',
+      };
     }
-
-    return [red, green, blue];
+    return {
+      backgroundColor: '#444',
+    };
   }
 
   render() {
@@ -66,10 +56,12 @@ export default class TopSitesWidget extends React.Component {
           this.state.sites.slice(0, 8).map((site) =>
             (
             <div key={site.title} style={{ width: '25%', height: '50%', display: 'inline-block', textAlign: 'center', float: 'left' }}>
-              <div style={{ backgroundColor: this._col(), height: '60%', width: '60%', margin: '0 auto', borderRadius: 5 }}>
-                <span style={{ fontSize: '600%', marginTop: 30, display: 'inline-block', color: 'rgb(63, 199, 250)' }}>{site.title.replace(/\([0-9]+\) /g, '').replace(/^https?:\/\//g, '')[0].toUpperCase()}</span>
-              </div>
-              <h4 style={{ margin: 0, textOverflow: 'ellipsis', overflow: 'hidden', padding: '0 6px', height: 44 }}>{site.title}</h4>
+              <a href={site.url} >
+                <div style={Object.assign({ height: '60%', width: '60%', margin: '0 auto', borderRadius: 5 }, this._image(site))}>
+                  <span style={{ fontSize: '600%', marginTop: 30, display: this._image(site).backgroundImage ? 'none' : 'inline-block', color: 'rgb(63, 199, 250)' }}>{site.title.replace(/\([0-9]+\) /g, '').replace(/^https?:\/\//g, '')[0].toUpperCase()}</span>
+                </div>
+                <h4 style={{ margin: 0, textOverflow: 'ellipsis', overflow: 'hidden', padding: '0 6px', height: 44 }}>{site.title}</h4>
+              </a>
             </div>
             )
           )

@@ -46,11 +46,11 @@ export default class AppSettingsBar extends React.Component {
           <i className="uk-icon-pencil uk-icon-large"></i>
         </div>
         <div className="app-settings-icon">
-          <a href="#my-id" data-uk-modal style={{ color: '#333' }}>
+          <a href="#appSettings" data-uk-modal style={{ color: '#333' }}>
             <i className="uk-icon-cog uk-icon-large"></i>
           </a>
         </div>
-        <div id="my-id" className="uk-modal">
+        <div id="appSettings" className="uk-modal">
           <div className="uk-modal-dialog">
             <a className="uk-modal-close uk-close"></a>
             <div className="uk-flex uk-form">

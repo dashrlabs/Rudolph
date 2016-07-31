@@ -46,6 +46,7 @@
     "dashr-widget-google": "^1.0.0",
     "dashr-widget-imageview": "*",
     "dashr-widget-quote-of-the-day": "*",
+    "dashr-widget-scratchpad": "0.0.1",
     "dashr-widget-todo": "*",
     "dashr-widget-weather": "*",
     "jquery": "^2.1.0",
