@@ -10,7 +10,7 @@
     "watch": "gulp watch"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^6.1.2",
     "babel-plugin-transform-class-properties": "^6.11.5",
@@ -53,8 +53,6 @@
     "lodash": "^4.14.1",
     "rc-progress": "^1.0.4",
     "react": "^15.3.0",
-    "react-circular-progress": "^0.1.2",
-    "react-dnd": "^2.1.4",
     "react-dom": "^15.3.0",
     "uikit": "^2.26.4"
   }
