@@ -10,7 +10,7 @@
 
   "description": "Personalise your own Chrome homepage. Tailor your Dashr to display a range of useful information in real-time.",
 
-  "author": "Team Hack",
+  "author": "Dashr Labs",
   "chrome_url_overrides": {
     "newtab": "dist/index.html"
   },
